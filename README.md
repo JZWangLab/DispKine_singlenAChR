@@ -30,4 +30,6 @@ pre_linear_decay.m The case of a linear decrease in concentration is considered,
 
 pre_expon_decay.m The case of exponential decrease in concentration is considered, where tt denotes that [ACh](t) is equal to the maximum concentration, the exponential function decreases in time, and d denotes the rate of decrease.
 
-exponential function fitting.py Fit single exponential as well as double exponential functions for the probability of opening via python
+talorcof.m is a function that solves for the coefficients of the Taylor expansion of the function.
+
+exponential function fitting.py Fit single exponential as well as double exponential functions for the probability of opening via python.
