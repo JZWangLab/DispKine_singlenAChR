@@ -1,7 +1,7 @@
 %第一段浓度线性商上升ACH=100t(0.1ms后ACH达到10um)
 clear;clc;
 %计算第一段概率
-ac=1000;
+ac=750;
 t=25;
 t1=20;
 K_2 = 40; K_1 = 0.25; alpha = 8; beta = 45;
@@ -30,7 +30,7 @@ for i=1:a
 %     hold on
 end
 
-initial_p2=P_int1(:,length(t2));
+initial_p2=initial_p;
 k1=0.06*ac; k2=0.1*ac;
 t3=t1:0.001:t;
 P_0=nd_ten(k1,k2,K_2,K_1,alpha,beta,[1;0;0;0],t3,t1); 
@@ -40,7 +40,15 @@ P_3=nd_ten(k1,k2,K_2,K_1,alpha,beta,[0;0;0;1],t3,t1);
 P_int2=P_0*initial_p2(1)+P_1*initial_p2(2)+P_2*initial_p2(3)+P_3*initial_p2(4);
 P_int2=bsxfun(@times,P_int2,1./sum(P_int2)); 
 Pp=[Pp,P_int2(:,2:length(t3))];
+dp=diff(Pp(4,:));
+dt=0.001;
+wf=dp./dt;
 t_t=0:0.001:25;
-plot(t_t,Pp(4,:))
+% figure(1)
+% hold on
+plot(t_t(1:25000),wf)
+% figure(2)
+% plot(t_t,Pp(4,:))
+% hold on
 % plot(t3,P_int2(4,:),'r')
 
