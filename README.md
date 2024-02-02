@@ -20,7 +20,7 @@ ndke.m  is the code for calculating the open probability when [ACh](t) exhibits 
 
 The next consideration is the rising stage:
 
-rising_stage_new.m At this point, the total time is set to 25ms, and the open probability is solved by considering different linear rise times as well as different maximum concentrations.
+rising_stage_new.m At this point, the total time is set to 25ms, and the open probability is solved by considering different linear rise times as well as different maximum concentrations. After solving the open probability again, the differential of the open probability is obtained.
 
 Finally considered is a complete variation of a vesicle releasing [ACh](t).
 
